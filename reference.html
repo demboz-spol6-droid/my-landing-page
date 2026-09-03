@@ -1,1 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Reference & Pillow Calculators | Elementz of Life</title>
+    <meta name="description" content="Access our ultimate sleep reference guides. Use the Pillow Height Calculator, check the Pillow Specification Database, and find causes for your night symptoms.">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
+    <style>
+        :root {
+            --primary: #1E293B; --accent: #3B82F6; --accent-light: #60A5FA; --accent-dark: #2563EB;
+            --bg-light: #F8FAFC; --text-muted: #64748B; --border: #E2E8F0;
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.02); --shadow-md: 0 10px 25px rgba(0,0,0,0.05);
+            --radius: 12px; --success: #10B981; --warning: #F59E0B;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--primary); background-color: #fff; line-height: 1.7; }
+        h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--primary); }
+        a { text-decoration: none; color: var(--accent); }
+
+        /* Header & Footer (Consistent with site) */
+        .site-header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-sm); }
+        .navbar-brand { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--primary); text-transform: uppercase; }
+        .navbar-brand span { color: var(--accent); }
+        .nav-link { font-weight: 600; color: var(--primary) !important; font-size: 0.95rem; padding: 8px 15px !important; border-radius: 8px; }
+        .nav-link:hover, .nav-link.active { color: var(--accent) !important; background: var(--bg-light); }
+        .dropdown-menu { border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-md); } .dropdown-item { font-weight: 500; padding: 10px 20px; } .dropdown-item:hover { background: var(--bg-light); color: var(--accent); }
+        .site-footer { background: var(--primary); color: #94a3b8; padding: 60px 0 30px; margin-top: 80px; }
+        .site-footer h5 { color: #fff; margin-bottom: 20px; font-size: 1.1rem; } .site-footer ul { list-style: none; padding: 0; } .site-footer ul li { margin-bottom: 10px; } .site-footer ul li a { color: #94a3b8; } .site-footer ul li a:hover { color: #fff; }
+        .footer-bottom { border-top: 1px solid #334155; margin-top: 40px; padding-top: 20px; text-align: center; font-size: 0.9rem; }
+
+        /* Page Structure */
+        .page-hero { background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%); padding: 60px 0; text-align: center; margin-bottom: 40px; }
+        .ref-section { padding: 40px 0; border-bottom: 1px solid var(--border); }
+        .custom-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 25px; box-shadow: var(--shadow-sm); transition: all 0.3s ease; height: 100%; }
+        .custom-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+        .icon-box { width: 50px; height: 50px; background: var(--bg-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.5rem; margin-bottom: 15px; }
+        
+        /* Tables */
+        .table-modern { width: 100%; border-collapse: collapse; box-shadow: var(--shadow-sm); border-radius: var(--radius); overflow: hidden; }
+        .table-modern th { background: var(--primary); color: #fff; padding: 15px; text-align: left; }
+        .table-modern td { padding: 15px; border-bottom: 1px solid var(--border); }
+        .table-modern tr:nth-child(even) { background: var(--bg-light); }
+
+        /* Calculator Specific */
+        .calc-result { background: #ecfdf5; border: 2px dashed var(--success); border-radius: var(--radius); padding: 30px; text-align: center; margin-top: 20px; display: none; }
+        .calc-result h3 { color: var(--success); margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg container">
+            <a class="navbar-brand" href="index.html">Elementz<span>OfLife</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-center" id="navContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Top Picks</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="derila-ergo-review.html">Best Ergonomic Pillow</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Reviews</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="derila-ergo-review.html">Derila Ergo Pillow</a></li></ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Sleep Guides</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="sleep-guides.html">Sleeping Positions</a></li></ul></li>
+                    <li class="nav-item"><a class="nav-link" href="cant-sleep.html">Can’t Sleep?</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="reference.html">Reference</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge bg-primary mb-2">Reference & Tools</span>
+            <h1>Sleep Reference Library</h1>
+            <p class="text-muted">Use our interactive tools, cheat sheets, and symptom databases to find exactly what your body needs for a perfect night's sleep.</p>
+        </div>
+    </section>
+
+    <div class="container mb-5">
+
+        <!-- Section 1: Night Symptom Reference -->
+        <section class="ref-section">
+            <div class="text-center mb-4">
+                <h2>Night Symptom Reference</h2>
+                <p class="text-muted">Find out what your morning symptoms mean and how to fix them.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <div class="icon-box"><i class="bi bi-emoji-frown"></i></div>
+                        <h3>Morning Headaches</h3>
+                        <p><strong>Cause:</strong> Often caused by a pillow that is too high, pushing the head forward and restricting blood flow.</p>
+                        <p class="text-muted mb-0"><strong>Fix:</strong> Lower pillow height or use a contour dip.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <div class="icon-box"><i class="bi bi-shield-exclamation"></i></div>
+                        <h3>Numb Arms & Hands</h3>
+                        <p><strong>Cause:</strong> Sleeping on a mattress that is too firm or a pillow lacking shoulder room, compressing nerves.</p>
+                        <p class="text-muted mb-0"><strong>Fix:</strong> Softer mattress topper or memory foam pillow.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <div class="icon-box"><i class="bi bi-arrow-repeat"></i></div>
+                        <h3>Tossing & Turning</h3>
+                        <p><strong>Cause:</strong> Pressure point buildup from non-conforming materials (like cheap polyester fill).</p>
+                        <p class="text-muted mb-0"><strong>Fix:</strong> Solid memory foam that responds to body heat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Pillow Height Calculator -->
+        <section class="ref-section">
+            <div class="text-center mb-4">
+                <h2>Interactive Pillow Height Calculator</h2>
+                <p class="text-muted">Answer three quick questions to find your ideal pillow loft (height).</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="custom-card">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">1. What is your primary sleeping position?</label>
+                            <select class="form-select form-select-lg" id="calc-position">
+                                <option value="side">Side Sleeper</option>
+                                <option value="back">Back Sleeper</option>
+                                <option value="stomach">Stomach Sleeper</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">2. What is your body frame size?</label>
+                            <select class="form-select form-select-lg" id="calc-frame">
+                                <option value="small">Small / Petite</option>
+                                <option value="avg" selected>Average / Medium</option>
+                                <option value="large">Large / Broad Shoulders</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">3. How firm is your mattress?</label>
+                            <select class="form-select form-select-lg" id="calc-firm">
+                                <option value="soft">Soft (Plush)</option>
+                                <option value="med" selected>Medium</option>
+                                <option value="firm">Firm</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary w-100 btn-lg mt-2" onclick="calculateHeight()">Calculate My Pillow Height</button>
+
+                        <div class="calc-result" id="calc-output">
+                            <h3>Recommended Loft: <span id="loft-result">Medium-High</span></h3>
+                            <p class="mb-0" id="loft-desc">This will properly align your spine based on your inputs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Pillow Height Cheat Sheet -->
+        <section class="ref-section">
+            <div class="text-center mb-4">
+                <h2>Pillow Height Cheat Sheet</h2>
+                <p class="text-muted">Quick reference guide for standard pillow lofts.</p>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-modern">
+                    <thead>
+                        <tr>
+                            <th>Sleep Position</th>
+                            <th>Recommended Loft (Height)</th>
+                            <th>Why?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Side Sleepers</td>
+                            <td>High (4 to 6 inches)</td>
+                            <td>Needs to fill the large gap between the shoulder and ear to keep the spine straight.</td>
+                        </tr>
+                        <tr>
+                            <td>Back Sleepers</td>
+                            <td>Medium (3 to 4 inches)</td>
+                            <td>Needs to support the natural curve of the neck without pushing the head too far forward.</td>
+                        </tr>
+                        <tr>
+                            <td>Stomach Sleepers</td>
+                            <td>Low (1 to 2 inches)</td>
+                            <td>Requires a very flat pillow (or no pillow) to prevent the neck from twisting backward.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 4: Pillow Specification Glossary -->
+        <section class="ref-section">
+            <div class="text-center mb-4">
+                <h2>Pillow Specification Glossary</h2>
+                <p class="text-muted">Understand the technical terms used in our pillow reviews.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="custom-card">
+                        <h3>Loft</h3>
+                        <p class="mb-0">The height or thickness of a pillow. Getting the right loft is the most important factor for spinal alignment.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="custom-card">
+                        <h3>Memory Foam</h3>
+                        <p class="mb-0">A viscoelastic material that reacts to body heat and pressure, allowing it to mold to the user's unique shape.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="custom-card">
+                        <h3>Cervical Contour</h3>
+                        <p class="mb-0">A curved design (like a butterfly shape) that specifically targets the natural curve of the cervical spine (neck).</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="custom-card">
+                        <h3>ILD (Indentation Load Deflection)</h3>
+                        <p class="mb-0">A measurement of foam firmness. A lower ILD means softer foam, while a higher ILD means firmer foam.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="navbar-brand text-white">Elementz<span style="color: var(--accent-light);">OfLife</span></h5>
+                    <p>Your trusted independent source for sleep product reviews, ergonomic guides, and wellness education.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul><li><a href="index.html">Home</a></li><li><a href="blog.html">Blog</a></li><li><a href="derila-ergo-review.html">Top Picks</a></li><li><a href="sleep-guides.html">Sleep Guides</a></li></ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Company</h5>
+                    <ul><li><a href="#">About Us</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Affiliate Disclosure</a></li></ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Elementz of Life. All rights reserved. We may earn a commission from links on this site.</p></div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript for the Pillow Height Calculator
+        function calculateHeight() {
+            const pos = document.getElementById('calc-position').value;
+            const frame = document.getElementById('calc-frame').value;
+            const firm = document.getElementById('calc-firm').value;
+            
+            let result = "Medium";
+            let description = "A standard medium-loft pillow (3-4 inches) should perfectly support your neck.";
+
+            // Basic logic for calculator
+            if (pos === 'side') {
+                result = "High (4-6 inches)";
+                description = "As a side sleeper, you need a higher loft to fill the gap between your shoulder and ear. Look for solid memory foam.";
+            } else if (pos === 'back') {
+                result = "Medium (3-4 inches)";
+                description = "Back sleepers need medium support to cradle the head without pushing the chin to the chest.";
+            } else if (pos === 'stomach') {
+                result = "Low (1-2 inches)";
+                description = "Stomach sleepers need almost no loft to prevent twisting the neck backward. A very flat, soft pillow is best.";
+            }
+
+            // Adjust for mattress firmness
+            if (firm === 'soft' && pos !== 'stomach') {
+                result = "Slightly Higher than " + result;
+                description += " Because your mattress is soft, your body sinks in more, requiring a slightly higher pillow.";
+            } else if (firm === 'firm' && pos !== 'stomach') {
+                result = "Slightly Lower than " + result;
+                description += " Because your mattress is firm, your body stays on top, requiring a slightly lower pillow.";
+            }
+
+            document.getElementById('loft-result').innerText = result;
+            document.getElementById('loft-desc').innerText = description;
+            document.getElementById('calc-output').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
