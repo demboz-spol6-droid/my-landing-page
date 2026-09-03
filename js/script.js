@@ -2,7 +2,7 @@
 // AFFILIATE URL CONFIGURATION
 // ==========================================
 // Paste your approved affiliate tracking URL here.
-const AFFILIATE_URL = "https://get-derila-ergo.com/article/derila-ergo-neck-pain-pd?&vndr=evf&evf=1";
+const AFFILIATE_URL = "https://get-derila-ergo.com/article/derila-ergo-neck-pain-pd?&vndr=evf&evf=1&uid=7194&offid=78&affiliate_id=2174&source_id=denp1&sub1=denp1&sub2=denp1&sub3=denp1&sub4=dembo&sub5=dembo";
 
 document.addEventListener('DOMContentLoaded', function() {
     
