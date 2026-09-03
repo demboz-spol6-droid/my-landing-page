@@ -1,1 +1,417 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Sleep Guides & Wellness Tips | Elementz of Life</title>
+    <meta name="description" content="Explore the Elementz of Life blog for in-depth sleep guides, ergonomic pillow reviews, and wellness tips to help you sleep better and wake up refreshed.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --primary: #1E293B;
+            --accent: #3B82F6;
+            --accent-light: #60A5FA;
+            --accent-dark: #2563EB;
+            --bg-light: #F8FAFC;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.02);
+            --shadow-md: 0 10px 25px rgba(0,0,0,0.05);
+            --radius: 12px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--primary);
+            background-color: var(--bg-light);
+            line-height: 1.7;
+        }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--primary); }
+        a { text-decoration: none; color: var(--accent); transition: 0.2s; }
+        a:hover { color: var(--accent-light); }
+
+        /* Header */
+        .site-header {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+        .navbar-brand span { color: var(--accent); }
+        .nav-link {
+            font-weight: 600;
+            color: var(--primary) !important;
+            font-size: 0.95rem;
+            padding: 8px 15px !important;
+            border-radius: 8px;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--accent) !important; background: var(--bg-light); }
+        .dropdown-menu { border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-md); }
+        .dropdown-item { font-weight: 500; padding: 10px 20px; }
+        .dropdown-item:hover { background: var(--bg-light); color: var(--accent); }
+
+        /* Page Header */
+        .page-header {
+            background: #fff;
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .page-header p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* Blog Cards */
+        .blog-post-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-light);
+        }
+        .blog-img-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background-color: #eaeaea;
+        }
+        .blog-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .blog-post-card:hover img {
+            transform: scale(1.05);
+        }
+        .blog-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-cat {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .blog-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            color: var(--primary);
+        }
+        .blog-content h3 a { color: var(--primary); }
+        .blog-content h3 a:hover { color: var(--accent); }
+        
+        .blog-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .blog-meta i { margin-right: 5px; }
+        
+        .blog-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .read-more-btn {
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            align-self: flex-start;
+        }
+        .read-more-btn i { transition: transform 0.2s; }
+        .read-more-btn:hover i { transform: translateX(4px); }
+
+        /* Pagination */
+        .pagination .page-link {
+            color: var(--primary);
+            border: 1px solid var(--border);
+            padding: 12px 18px;
+            border-radius: 8px !important;
+            margin: 0 5px;
+            font-weight: 600;
+        }
+        .pagination .page-link:hover {
+            background-color: var(--bg-light);
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+        .pagination .active .page-link {
+            background-color: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+        .site-footer { background: var(--primary); color: #94a3b8; padding: 60px 0 30px; margin-top: 80px; }
+        .site-footer h5 { color: #fff; margin-bottom: 20px; font-size: 1.1rem; }
+        .site-footer ul { list-style: none; padding: 0; }
+        .site-footer ul li { margin-bottom: 10px; }
+        .site-footer ul li a { color: #94a3b8; }
+        .site-footer ul li a:hover { color: #fff; }
+        .footer-bottom { border-top: 1px solid #334155; margin-top: 40px; padding-top: 20px; text-align: center; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg container">
+            <a class="navbar-brand" href="index.html">Elementz<span>OfLife</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Top Picks</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="derila-ergo-review.html">Best Ergonomic Pillow</a></li>
+                            <li><a class="dropdown-item" href="#">Best Mattresses</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Reviews</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="derila-ergo-review.html">Derila Ergo Pillow</a></li>
+                            <li><a class="dropdown-item" href="#">Sleep Supplements</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sleep Guides</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="sleep-guides.html">Sleeping Positions</a></li>
+                            <li><a class="dropdown-item" href="sleep-guides.html">Spine Alignment</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="cant-sleep.html">Can’t Sleep?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reference.html">Reference</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <span class="badge bg-primary mb-2">The Elementz Blog</span>
+            <h1>Sleep Guides & Wellness Tips</h1>
+            <p>Evidence-based articles to help you optimize your sleep posture, choose the right bedding, and wake up refreshed.</p>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <div class="container mb-5">
+        <div class="row g-4">
+            
+            <!-- Post 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="blog-post-card">
+                    <div class="blog-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=600&q=80" alt="Ergonomic Pillow">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-cat">Top Picks</span>
+                        <h3><a href="derila-ergo-review.html">Best Pillow for Neck Pain (2026): Derila Ergo Review</a></h3>
+                        <div class="blog-meta">
+                            <span><i class="bi bi-person"></i> Admin</span>
+                            <span><i class="bi bi-calendar3"></i> May 12, 2026</span>
+                        </div>
+                        <p class="blog-excerpt">If you struggle with morning stiffness, the Derila Ergo's butterfly contour might be the solution. See why it's our #1 pick.</p>
+                        <a href="derila-ergo-review.html" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="blog-post-card">
+                    <div class="blog-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1580113595037-89c6f8e39b76?auto=format&fit=crop&w=600&q=80" alt="Sleep Posture">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-cat">Sleep Guides</span>
+                        <h3><a href="sleep-guides.html">How Your Sleeping Position Affects Your Spine</a></h3>
+                        <div class="blog-meta">
+                            <span><i class="bi bi-person"></i> Admin</span>
+                            <span><i class="bi bi-calendar3"></i> May 10, 2026</span>
+                        </div>
+                        <p class="blog-excerpt">Discover the biomechanics of sleep and why your pillow shape is crucial for maintaining proper cervical alignment.</p>
+                        <a href="sleep-guides.html" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="blog-post-card">
+                    <div class="blog-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1520209759809-a9bcb6cb3241?auto=format&fit=crop&w=600&q=80" alt="Can't Sleep">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-cat">Can't Sleep?</span>
+                        <h3><a href="cant-sleep.html">Flipping the Pillow All Night? Here's Why</a></h3>
+                        <div class="blog-meta">
+                            <span><i class="bi bi-person"></i> Admin</span>
+                            <span><i class="bi bi-calendar3"></i> May 08, 2026</span>
+                        </div>
+                        <p class="blog-excerpt">How hidden neck tension causes micro-arousals that ruin your REM sleep and leave you exhausted the next day.</p>
+                        <a href="cant-sleep.html" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 4 (Placeholder for future) -->
+            <div class="col-md-6 col-lg-4">
+                <div class="blog-post-card">
+                    <div class="blog-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80" alt="Bedroom Setup">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-cat">Wellness</span>
+                        <h3><a href="#">5 Natural Ways to Fall Asleep Faster Tonight</a></h3>
+                        <div class="blog-meta">
+                            <span><i class="bi bi-person"></i> Admin</span>
+                            <span><i class="bi bi-calendar3"></i> May 05, 2026</span>
+                        </div>
+                        <p class="blog-excerpt">From temperature control to breathing exercises, here’s how to trick your brain into deep sleep naturally.</p>
+                        <a href="#" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 5 (Placeholder) -->
+            <div class="col-md-6 col-lg-4">
+                <div class="blog-post-card">
+                    <div class="blog-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289caecef?auto=format&fit=crop&w=600&q=80" alt="Memory Foam">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-cat">Reference</span>
+                        <h3><a href="#">Memory Foam vs. Latex: Which is Better?</a></h3>
+                        <div class="blog-meta">
+                            <span><i class="bi bi-person"></i> Admin</span>
+                            <span><i class="bi bi-calendar3"></i> May 01, 2026</span>
+                        </div>
+                        <p class="blog-excerpt">A breakdown of the pros and cons of the two most popular bedding materials on the market today.</p>
+                        <a href="#" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 6 (Placeholder) -->
+            <div class="col-md-6 col-lg-4">
+                <div class="blog-post-card">
+                    <div class="blog-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1563911308071-79c4e3a6c1a6?auto=format&fit=crop&w=600&q=80" alt="Morning Headache">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-cat">Can't Sleep?</span>
+                        <h3><a href="#">Morning Headaches: Is Your Pillow to Blame?</a></h3>
+                        <div class="blog-meta">
+                            <span><i class="bi bi-person"></i> Admin</span>
+                            <span><i class="bi bi-calendar3"></i> April 28, 2026</span>
+                        </div>
+                        <p class="blog-excerpt">Waking up with a tension headache? Poor cervical alignment might be restricting blood flow while you sleep.</p>
+                        <a href="#" class="read-more-btn">Read More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Blog Pagination" class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"><i class="bi bi-chevron-left"></i></a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="navbar-brand text-white">Elementz<span style="color: var(--accent-light);">OfLife</span></h5>
+                    <p>Your trusted independent source for sleep product reviews, ergonomic guides, and wellness education.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="derila-ergo-review.html">Top Picks</a></li>
+                        <li><a href="sleep-guides.html">Sleep Guides</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Affiliate Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Elementz of Life. All rights reserved. We may earn a commission from links on this site.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
