@@ -96,15 +96,15 @@
         .hero h1 { font-size: 3rem; margin-bottom: 20px; }
         .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 30px; }
         
-        .hero-image-placeholder {
+        /* Replaced placeholder with a real img tag for better responsiveness */
+        .hero-img {
             width: 100%; 
-            height: 450px; 
+            height: 100%; 
+            max-height: 500px;
+            object-fit: cover;
             border-radius: var(--radius);
-            background-color: #eaeaea; 
-            background-size: cover; 
-            background-position: center;
             box-shadow: var(--shadow-md);
-            border: 4px solid #fff;
+            border: 8px solid #fff;
         }
 
         /* CTA Buttons */
@@ -186,7 +186,7 @@
             height: 100%;
             border: none;
             display: block;
-            object-fit: cover; /* Ensures video covers the area nicely */
+            object-fit: cover;
         }
 
         /* Discount Banner */
@@ -238,7 +238,7 @@
             border-radius: var(--radius);
             box-shadow: var(--shadow-md); 
             margin: 30px 0;
-            border: 4px solid #fff;
+            border: 8px solid #fff;
         }
 
         /* Sticky Mobile CTA */
@@ -268,7 +268,7 @@
             .hero { padding: 50px 0; }
             .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1.1rem; }
-            .hero-image-placeholder { height: 350px; margin-top: 30px; }
+            .hero-img { margin-top: 30px; }
         }
 
         @media (max-width: 768px) {
@@ -315,8 +315,8 @@
                     <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-muted);">*We independently review products. We may earn a commission if you buy through our links.</p>
                 </div>
                 <div class="col-lg-6">
-                    <!-- CHANGED TO LOCAL IMAGE PATH -->
-                    <div class="hero-image-placeholder" style="background-image: url('images/derila-hero.png');"></div>
+                    <!-- PREMIUM UNSPLASH IMAGE (Never expires) -->
+                    <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=1000&auto=format&fit=crop" alt="Ergonomic Memory Foam Pillow" class="hero-img">
                 </div>
             </div>
         </div>
@@ -342,7 +342,7 @@
             
             <p>See exactly how poor alignment affects your sleep in the video below:</p>
             
-            <!-- VIDEO 1 (Added muted, loop, playsinline for autoplay to work) -->
+            <!-- VIDEO 1 -->
             <div class="video-container">
                 <video muted loop playsinline preload="auto">
                     <source src="https://get-derila-ergo.com/article/assets/72aeb81e-8bd5-4e25-9fbf-526700402d23/26W4_Pillow-Daddy-Neck-Pain_VideoBrief-05-B.mp4" type="video/mp4">
@@ -356,8 +356,8 @@
             <h2>Introduction to the Derila Ergo Memory Foam Pillow</h2>
             <p>The Derila Ergo pillow has gained significant attention online for its specialized approach to neck support. Rather than a traditional puffy pillow, it utilizes a high-density memory foam core shaped into a specific ergonomic contour. But does the design translate to actual comfort? Let's break down what makes this cervical pillow unique.</p>
             
-            <!-- CHANGED TO LOCAL IMAGE PATH -->
-            <img src="images/derila-intro.jpg" alt="Women holding Derila Ergo Pillow" class="feature-image">
+            <!-- PREMIUM UNSPLASH IMAGE (Woman sleeping comfortably) -->
+            <img src="https://images.unsplash.com/photo-1598891328811-6e4736c6c0ab?q=80&w=1000&auto=format&fit=crop" alt="Woman sleeping comfortably on ergonomic pillow" class="feature-image">
             
             <p>Watch how the solid memory foam core reacts to pressure and heat, molding perfectly to your unique shape:</p>
 
@@ -460,8 +460,8 @@
             <h2>Who is this for?</h2>
             <p>This pillow is ideal for individuals who frequently wake up with a stiff neck or those who struggle to find a comfortable sleeping position. Back and side sleepers will benefit most from the elevated neck support. However, strict stomach sleepers might find the contoured edges too high for their preferred position.</p>
             
-            <!-- CHANGED TO LOCAL IMAGE PATH -->
-            <img src="images/derila-home.png" alt="Derila Pillow in home setting" class="feature-image">
+            <!-- PREMIUM UNSPLASH IMAGE (Relaxing bedroom/lifestyle) -->
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1000&auto=format&fit=crop" alt="Comfortable bedroom setup for neck pain relief" class="feature-image">
 
             <p>Still not sure? Watch this final breakdown of why users are making the switch to ergonomic pillows:</p>
 
@@ -569,10 +569,10 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle (Optional) -->
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Custom JS Logic (Now includes Auto-Play on Scroll) -->
+    <!-- Custom JS Logic -->
     <script src="js/script.js"></script>
 </body>
 </html>
