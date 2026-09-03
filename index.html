@@ -129,7 +129,6 @@
             box-shadow: 0 12px 25px rgba(26, 188, 156, 0.4);
             text-decoration: none;
         }
-        .cta-btn-pros { font-size: 0.9rem; padding: 12px 30px; }
 
         /* Content Layout */
         .article-content { max-width: 800px; margin: 0 auto; padding: 20px; }
@@ -187,6 +186,7 @@
             height: 100%;
             border: none;
             display: block;
+            object-fit: cover; /* Ensures video covers the area nicely */
         }
 
         /* Discount Banner */
@@ -315,7 +315,8 @@
                     <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-muted);">*We independently review products. We may earn a commission if you buy through our links.</p>
                 </div>
                 <div class="col-lg-6">
-                    <div class="hero-image-placeholder" style="background-image: url('https://z-cdn-media.chatglm.cn/files/46850d23-53f3-4d8e-a633-e5c6bfecff35.png?auth_key=1886271909-42be9bd2e9b04cf9822ac09d602827ca-0-00df19d3a81615556d4b3cc37e4f321c');"></div>
+                    <!-- CHANGED TO LOCAL IMAGE PATH -->
+                    <div class="hero-image-placeholder" style="background-image: url('images/derila-hero.jpg');"></div>
                 </div>
             </div>
         </div>
@@ -341,9 +342,9 @@
             
             <p>See exactly how poor alignment affects your sleep in the video below:</p>
             
-            <!-- VIDEO 1 -->
+            <!-- VIDEO 1 (Added muted, loop, playsinline for autoplay to work) -->
             <div class="video-container">
-                <video controls preload="none" poster="" playsinline>
+                <video muted loop playsinline preload="auto">
                     <source src="https://get-derila-ergo.com/article/assets/72aeb81e-8bd5-4e25-9fbf-526700402d23/26W4_Pillow-Daddy-Neck-Pain_VideoBrief-05-B.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -355,13 +356,14 @@
             <h2>Introduction to the Derila Ergo Memory Foam Pillow</h2>
             <p>The Derila Ergo pillow has gained significant attention online for its specialized approach to neck support. Rather than a traditional puffy pillow, it utilizes a high-density memory foam core shaped into a specific ergonomic contour. But does the design translate to actual comfort? Let's break down what makes this cervical pillow unique.</p>
             
-            <img src="https://z-cdn-media.chatglm.cn/files/d12552fc-35b8-4036-9a38-8a0730ea2105.png?auth_key=1886271909-c0366796713b4d76b3f831897b8f4556-0-a0408c703f769e9ef753246cd741e4a6" alt="Women holding Derila Ergo Pillow" class="feature-image">
+            <!-- CHANGED TO LOCAL IMAGE PATH -->
+            <img src="images/derila-intro.jpg" alt="Women holding Derila Ergo Pillow" class="feature-image">
             
             <p>Watch how the solid memory foam core reacts to pressure and heat, molding perfectly to your unique shape:</p>
 
             <!-- VIDEO 2 -->
             <div class="video-container">
-                <video controls preload="none" playsinline>
+                <video muted loop playsinline preload="auto">
                     <source src="https://get-derila-ergo.com/article/assets/2b04a664-6efc-4ebe-870c-5cad638ea14c/26W4_Pillow-Daddy-Neck-Pain_VideoBrief-07.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -406,7 +408,7 @@
 
             <!-- VIDEO 3 -->
             <div class="video-container">
-                <video controls preload="none" playsinline>
+                <video muted loop playsinline preload="auto">
                     <source src="https://get-derila-ergo.com/article/assets/eb5ba4a2-fba3-4f56-be29-839c1bf776e4/26W4_Pillow-Daddy-Neck-Pain_VideoBrief-10-B.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -458,13 +460,14 @@
             <h2>Who is this for?</h2>
             <p>This pillow is ideal for individuals who frequently wake up with a stiff neck or those who struggle to find a comfortable sleeping position. Back and side sleepers will benefit most from the elevated neck support. However, strict stomach sleepers might find the contoured edges too high for their preferred position.</p>
             
-            <img src="https://z-cdn-media.chatglm.cn/files/99fad4e7-3be6-4058-8c4f-f9482b9beb19.png?auth_key=1886271909-7ca037c8091344eaaf0567618f3b797f-0-00f5d9e1902a590acc4f88fc4753e17c" alt="Derila Pillow in home setting" class="feature-image">
+            <!-- CHANGED TO LOCAL IMAGE PATH -->
+            <img src="images/derila-home.jpg" alt="Derila Pillow in home setting" class="feature-image">
 
             <p>Still not sure? Watch this final breakdown of why users are making the switch to ergonomic pillows:</p>
 
             <!-- VIDEO 4 -->
             <div class="video-container">
-                <video controls preload="none" playsinline>
+                <video muted loop playsinline preload="auto">
                     <source src="https://get-derila-ergo.com/article/assets/9ead3de0-2561-4f0b-937b-0ccb53eb2531/26W4_Pillow-Daddy-Neck-Pain_VideoBrief-12.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -566,10 +569,10 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle (Optional, for any bootstrap components if needed later) -->
+    <!-- Bootstrap JS Bundle (Optional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Custom JS Logic (Unchanged) -->
+    <!-- Custom JS Logic (Now includes Auto-Play on Scroll) -->
     <script src="js/script.js"></script>
 </body>
 </html>
